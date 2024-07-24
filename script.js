@@ -95,7 +95,7 @@ function updateDOM() {
   completeListArray.forEach((completeItem, index) => {
     createItemEl(completeList, 2, completeItem, index);
   });
-  completeListArray = filterArray(progressListArray);
+  completeListArray = filterArray(completeListArray);
 
   // On Hold Column
   onHoldList.textContent = '';
@@ -103,8 +103,8 @@ function updateDOM() {
     createItemEl(onHoldList, 3, onHoldItem, index);
   });
   onHoldListArray = filterArray(onHoldListArray);
-
-  // Run getSavedColumns only once, Update Local Storage
+  
+  // Don't run more than once, Update Local Storage
   updatedOnLoad = true;
   updateSavedColumns();
 }
